@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0f0f0;
+}
+
+header {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header p {
+  margin: 50px 0 10px 20px;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 150px;
+  width: 280px;
+  background: #fff;
+  margin: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.card p {
+  max-width: 250px;
+  margin-left: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card span {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.read {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 0;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.btn {
+  border: 0;
+  padding: 10px 20px;
+  color: #fff;
+  background: #000;
+}
+
+.btn_open {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.btn_add {
+  margin: 20px 0 30px;
+}
+
+.modal {
+  z-index: 10;
+  position: fixed;
+  margin: 0 auto;
+  top: 100px;
+  left: 0;
+  right: 0;
+  width: 300px;
+  background: #fff;
+}
+
+.modal div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal input {
+  margin-top: 10px;
+  padding: 8px 10px;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.close {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
