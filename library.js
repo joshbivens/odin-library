@@ -8,7 +8,6 @@ const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
 
-
 let myLibrary = [
   {
     title: "The Hobbit",
@@ -41,7 +40,7 @@ function Book(title, author, pages) {
 
 function addBookToLibrary() {
   if (title.value && author.value && pages.value) {
-    let temp = new Book(title.value, author.value, pages.value)
+    let temp = new Book(title.value, author.value, pages.value);
     myLibrary.push(temp);
     title.value = '';
     author.value = '';
@@ -74,25 +73,22 @@ btn_add.addEventListener("click", addBookToLibrary);
 close.addEventListener("click", closeModal);
 
 function render() {
-  myLibrary.forEach((book) => {
-    
-  })
-  // wrapper.innerHTML = '';
-  // for(let i = 0, x = myLibrary.length; i < x; i++) {
-  //   wrapper.innerHTML += `
-  //   <div class="card" id="${i}">
-  //     <span onClick="removeBookFromLibrary(${i})">✕</span>
-  //     <p><b>${myLibrary[i].title}</b></p>
-  //     <p>${myLibrary[i].author}</p>
-  //     <p>${myLibrary[i].pages} pages</p>
-  //     <button 
-  //       class="read"
-  //       onClick="toggleRead(${i})"
-  //       style="background: ${ myLibrary[i].read ? "steelblue" : "salmon"}">
-  //         ${ myLibrary[i].read ? 'Read' : 'Unread' }
-  //       </button> 
-  //   </div>`;
-  }
+  wrapper.innerHTML = '';
+  myLibrary.map((book, index) => {
+    wrapper.innerHTML += `
+    <div class="card" id="${index}">
+      <span class="remove" onClick="removeBookFromLibrary(${index})">✕</span>
+      <p><b>${book.title}</b></p>
+      <p>${book.author}</p>
+      <p>${book.pages} pages</p>
+      <button 
+        class="read"
+        onClick="toggleRead(${index})"
+        style="background: ${ book.read ? "steelblue" : "salmon"}">
+          ${ book.read ? 'Read' : 'Unread' }
+        </button> 
+    </div>`;
+  });
 }
 
 render();
