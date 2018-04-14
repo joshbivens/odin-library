@@ -50,8 +50,10 @@ function addBookToLibrary() {
   }
 }
 
+btn_add.addEventListener("click", addBookToLibrary);
+
 function removeBookFromLibrary(index) {
-  myLibrary.splice(myLibrary[index], 1);
+  delete myLibrary[index];
   render();
 }
 
@@ -69,7 +71,6 @@ function closeModal() {
 }
 
 btn_open.addEventListener("click", openModal);
-btn_add.addEventListener("click", addBookToLibrary);
 close.addEventListener("click", closeModal);
 
 function render() {
